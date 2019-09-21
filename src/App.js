@@ -1,6 +1,10 @@
 import React from 'react';
 import Navbar from './components/Navbar';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Contact from './components/Contact';
+import About from './components/About';
+import Todolist from './components/Todolist';
 
 class App extends React.Component {
   render(){
@@ -8,6 +12,10 @@ class App extends React.Component {
       <BrowserRouter>
         <div className="App">
           <Navbar />
+          <Route path="/home" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/todolist" component={Todolist} />
         </div>
       </BrowserRouter>
     )

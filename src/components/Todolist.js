@@ -1,8 +1,8 @@
 import React from 'react';
-import Todos from './components/Todos'
-import AddTodo from './components/AddTodo'
+import Todos from './Todos'
+import AddTodo from './AddTodo'
 
-class App extends React.Component {
+class Todolist extends React.Component {
   state = {
     todos: [
       {id:1, content: 'buy milk'},
