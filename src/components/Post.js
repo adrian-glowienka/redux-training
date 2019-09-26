@@ -1,5 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { deletePost } from '../actions/postActions';
 
 class Post extends React.Component {
 
@@ -31,7 +32,7 @@ class Post extends React.Component {
     }
 }
 
-const mapStatetoProps = (state, ownProps) => {
+const mapStateToProps = (state, ownProps) => {
     let id = ownProps.match.params.post_id;
     return {
         post: state.posts.find(post => post.id === id)
@@ -40,9 +41,9 @@ const mapStatetoProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        deletePost: (id) => { dispatch({type: 'DELETE_POST', id: id }) }
+        deletePost: (id) => { dispatch(deletePost(id)) }
     }
 }
 
 
-export default connect(mapStatetoProps, mapDispatchToProps)(Post)
+export default connect(mapStateToProps, mapDispatchToProps)(Post)
